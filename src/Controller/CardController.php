@@ -31,6 +31,7 @@ class CardController extends AbstractController
         // Create random set of 10 cards
         $firstCardSet = $this->cardCreator->initCard();
 
+        // Rendering view with ordering set of cards with wanted order
         return $this->render('card/index.html.twig', [
             'symbolOrderingStructure' => SortingLogic::SYMBOL,
             'valueOrderingStructure' => SortingLogic::VALUES,
