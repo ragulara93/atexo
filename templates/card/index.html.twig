@@ -6,31 +6,26 @@
 <style>
     .example-wrapper { margin: 1em auto;  width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .button {
+        background-color: darkblue;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
 </style>
 
 <div class="example-wrapper">
-    <table>
-        <thead>
-        <tr>
-            <th colspan="4">Order of symbols</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr style="border: 1px solid black; border-collapse: collapse;">
-{#            {% for symbol in constant('App\\Services\\Game\\CardSorting::SYMBOL') %}#}
-            {% for symbol in symbolOrderingStructure %}
-                <td style="border: 1px solid black;">{{ symbol }}</td>
-            {% endfor %}
-        </tr>
-        </tbody>
-    </table>
+    <h3>Order of symbols</h3>
+    {% for symbol in symbolOrderingStructure %}
+        <img width="40" src="{{ asset('images/symbols/' ~ symbol ~ '.png') }}" alt="{{ symbol }}"/>
+    {% endfor %}
 
+    <h3>Order of values</h3>
     <table>
-        <thead>
-        <tr>
-            <th colspan="10">Order of Values</th>
-        </tr>
-        </thead>
         <tbody>
         <tr style="border: 1px solid black; border-collapse: collapse;">
             {% for value in valueOrderingStructure %}
@@ -39,36 +34,18 @@
         </tr>
         </tbody>
     </table>
+    <br>
+    <h3>Initial cards</h3>
+    {% for card in firstCardSet %}
+        <img src="{{ asset('images/cards/' ~ card.value ~ card.symbol ~ '.gif') }}" alt="{{ card.value }} - {{ card.symbol }}"/>
+    {% endfor %}
 
+    <h3>Sorted cards</h3>
+    {% for sortedCard in sortedCards %}
+        <img src="{{ asset('images/cards/' ~ sortedCard.value ~ sortedCard.symbol ~ '.gif') }}" alt="{{ sortedCard.value }} - {{ sortedCard.symbol }}"/>
+    {% endfor %}
 
-    <table>
-        <thead>
-        <tr>
-            <th colspan="10">Init cards</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr style="border: 1px solid black; border-collapse: collapse;">
-            {% for card in firstCardSet %}
-                <td style="border: 1px solid black;">{{ card.value }} - {{ card.symbol }}</td>
-            {% endfor %}
-        </tr>
-        </tbody>
-    </table>
-
-    <table>
-        <thead>
-        <tr>
-            <th colspan="10">Init cards</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr style="border: 1px solid black; border-collapse: collapse;">
-            {% for sortedCard in sortedCards %}
-                <td style="border: 1px solid black;">{{ sortedCard.value }} - {{ sortedCard.symbol }}</td>
-            {% endfor %}
-        </tr>
-        </tbody>
-    </table>
+    <br><br>
+    <a href="{{ path('card') }}" class="button">Replay</a>
 </div>
 {% endblock %}

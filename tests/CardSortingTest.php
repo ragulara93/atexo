@@ -20,7 +20,7 @@ class CardSortingTest extends TestCase
             ],
             [
                 "value" => 8,
-                "symbol" => "spades"
+                "symbol" => "spade"
             ],
             [
                 "value" => "queen",
@@ -59,7 +59,7 @@ class CardSortingTest extends TestCase
             ],
             [
                 "value" => 8,
-                "symbol" => "spades"
+                "symbol" => "spade"
             ],
             [
                 "value" => "queen",

@@ -12,7 +12,7 @@ class SortingLogic
     public const SYMBOL = [
         'club',
         'diamond',
-        'spades',
+        'spade',
         'heart'
     ];
 

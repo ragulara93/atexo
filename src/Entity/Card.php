@@ -12,7 +12,7 @@ class Card
         'heart',
         'club',
         'diamond',
-        'spades'
+        'spade'
     ];
 
     public const VALUES = [
