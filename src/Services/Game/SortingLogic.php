@@ -6,6 +6,9 @@ namespace App\Services\Game;
 
 class SortingLogic
 {
+    /**
+     * array containing the order we want for the symbols
+     */
     public const SYMBOL = [
         'club',
         'diamond',
@@ -13,6 +16,10 @@ class SortingLogic
         'heart'
     ];
 
+    /**
+     * array containing the order we want for the values
+     * Here it will order by impair first then by pair numbers
+     */
     public const VALUES = [
         'ace',
         '3',

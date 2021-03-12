@@ -12,6 +12,37 @@
     <table>
         <thead>
         <tr>
+            <th colspan="4">Order of symbols</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="border: 1px solid black; border-collapse: collapse;">
+            {% for symbol in symbolOrderingStructure %}
+                <td style="border: 1px solid black;">{{ symbol }}</td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th colspan="10">Order of Values</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="border: 1px solid black; border-collapse: collapse;">
+            {% for value in valueOrderingStructure %}
+                <td style="border: 1px solid black;">{{ value }} </td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+
+    <table>
+        <thead>
+        <tr>
             <th colspan="10">Init cards</th>
         </tr>
         </thead>
@@ -19,6 +50,21 @@
         <tr style="border: 1px solid black; border-collapse: collapse;">
             {% for card in firstCardSet %}
                 <td style="border: 1px solid black;">{{ card.value }} - {{ card.symbol }}</td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th colspan="10">Init cards</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="border: 1px solid black; border-collapse: collapse;">
+            {% for sortedCard in sortedCards %}
+                <td style="border: 1px solid black;">{{ sortedCard.value }} - {{ sortedCard.symbol }}</td>
             {% endfor %}
         </tr>
         </tbody>
