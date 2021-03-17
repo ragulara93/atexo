@@ -34,11 +34,15 @@ class CardCreator
 
         $i = 0;
         while ($i < self::NUMBER_OF_CARDS) {
-            $cards[] = [
+            $newCard = [
                 "value" => $this->arrayRandom->getArrayRandomValues(Card::VALUES),
                 "symbol" => $this->arrayRandom->getArrayRandomValues(Card::SYMBOL)
             ];
-            $i++;
+
+            if (!in_array($newCard, $cards)) {
+                $cards[] = $newCard;
+                $i++;
+            }
         }
 
         return $cards;
